@@ -195,11 +195,8 @@ for (func, title, typ) = ((step, "Step Response", Stepplot), (impulse, "Impulse 
                         yguide --> ytext
                         subplot --> s2i(i,j)
                         label --> "\$G_{$(si)}\$"
-<<<<<<< HEAD
-=======
                         linestyle --> styledict[:l]
                         seriescolor --> styledict[:c]
->>>>>>> 5ab6bdc (Update according with warnings from plots.jl)
                         t, ydata
                     end
                 end
@@ -563,6 +560,10 @@ nicholsplot
         @series begin
             linewidth --> 2
             hover --> [Printf.@sprintf("ω = %.3f", w) for w in w]
+<<<<<<< HEAD
+=======
+            seriescolor --> styledict[:c]
+>>>>>>> a3c06ae (Changed "color" to "seriescolor" for sigmaplot and extrema)
             angles, mag
         end
     end
@@ -596,7 +597,12 @@ sigmaplot
             @series begin
                 xscale --> :log10
                 yscale --> _PlotScaleFunc
+<<<<<<< HEAD
                 seriescolor --> si
+=======
+                linestyle --> styledict[:l]
+                seriescolor --> styledict[:c]
+>>>>>>> a3c06ae (Changed "color" to "seriescolor" for sigmaplot and extrema)
                 w, sv[:, i]
             end
         end
