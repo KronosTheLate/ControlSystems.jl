@@ -134,6 +134,8 @@ lsimplot
                 title   --> "System Response"
                 subplot --> s2i(1,i)
                 label     --> "\$G_{$(si)}\$"
+                linestyle --> styledict[:l]
+                seriescolor --> styledict[:c]
                 t,  y[:, i]
             end
         end
@@ -193,6 +195,11 @@ for (func, title, typ) = ((step, "Step Response", Stepplot), (impulse, "Impulse 
                         yguide --> ytext
                         subplot --> s2i(i,j)
                         label --> "\$G_{$(si)}\$"
+<<<<<<< HEAD
+=======
+                        linestyle --> styledict[:l]
+                        seriescolor --> styledict[:c]
+>>>>>>> 5ab6bdc (Update according with warnings from plots.jl)
                         t, ydata
                     end
                 end
