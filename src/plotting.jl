@@ -560,10 +560,7 @@ nicholsplot
         @series begin
             linewidth --> 2
             hover --> [Printf.@sprintf("ω = %.3f", w) for w in w]
-<<<<<<< HEAD
-=======
             seriescolor --> styledict[:c]
->>>>>>> a3c06ae (Changed "color" to "seriescolor" for sigmaplot and extrema)
             angles, mag
         end
     end
@@ -597,12 +594,8 @@ sigmaplot
             @series begin
                 xscale --> :log10
                 yscale --> _PlotScaleFunc
-<<<<<<< HEAD
-                seriescolor --> si
-=======
                 linestyle --> styledict[:l]
                 seriescolor --> styledict[:c]
->>>>>>> a3c06ae (Changed "color" to "seriescolor" for sigmaplot and extrema)
                 w, sv[:, i]
             end
         end
@@ -704,7 +697,7 @@ pzmap
         @warn("pzmap currently only supports SISO systems. Only transfer function from u₁ to y₁ will be shown")
     end
     seriestype := :scatter
-    framestyle --> :zerolines
+    framestyle := :zerolines
     title --> "Pole-zero map"
     legend --> false
     for system in systems
