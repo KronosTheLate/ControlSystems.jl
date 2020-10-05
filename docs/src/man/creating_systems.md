@@ -51,10 +51,6 @@ s^2 + 2*s + 1
 
 Continuous-time transfer function model
 ```
-
-This was of course a trivial example, as the expression was already reduced. But as long as the expression only contains numbers and s (with s defined as shown), the transfer-function is defined correctly.
-Note that due to rounding-errors when dealing with floating point numbers, the transfer-function returned will sometimes show something like 1.99999999999 instead of 2.
-
 ## zpk - Pole-Zero-Gain Representation
 Sometimes it's better to represent the transfer function by its poles, zeros and gain, this can be done using
 ```julia
