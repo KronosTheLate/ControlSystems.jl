@@ -148,19 +148,17 @@ end
 `stepeplot(sys[, Tf]; kwargs...)`` or `stepplot(sys[, t]; kwargs...)``
 Plot step response of  `sys` until final time `Tf` or at time points in the vector `t`.
 If not defined, suitable values are chosen based on `sys`.
-See also [`step`](@ref)
-
-`kwargs` is sent as argument to Plots.plot.
+The step on the input goes from 0 to 1 and occurs at t=0.
 """
 stepplot
 
 """
-    `impulseplot(sys[, Tf]; kwargs...)`` or `impulseplot(sys[, t]; kwargs...)``
-Plot impulse response of `sys` until final time `Tf` or at time points in the vector `t`.
+    impulseplot(sys[, tfinal[,  dt]])
+Plot impulse response of `sys` with optional final time `tfinal` and discretization time `dt`.
 If not defined, suitable values are chosen based on `sys`.
-See also [`impulse`](@ref)
-
-`kwargs` is sent as argument to Plots.plot.
+The the impulse is such that the area under it is 1, with the shortest possible time-step.
+For continuos systems this is the Dirac delta function.
+For discrete systems this is the Kronecker delta function.
 """
 impulseplot
 
