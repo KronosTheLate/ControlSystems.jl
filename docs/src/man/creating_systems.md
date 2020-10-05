@@ -5,17 +5,15 @@ DocTestSetup = quote
 end
 ```
 
-## tf - Rational Representation
-The syntax for creating a transfer function is
+## using the ```tf()``` function
+The basic syntax for creating a transfer function is
 ```julia
 tf(num, den, Ts=0)
 ```
 where `num` and `den` are the polynomial coefficients of the numerator and denominator of the polynomial and `Ts` is the sample time.
 ### Example:
-```jldoctest
-tf([1.0],[1,2,1])
-
-# output
+```julia
+julia> tf([1.0],[1,2,1])
 
 TransferFunction{Continuous,ControlSystems.SisoRational{Float64}}
          1.0
@@ -27,6 +25,36 @@ Continuous-time transfer function model
 
 The transfer functions created using this method will be of type `TransferFunction{SisoRational}`.
 
+
+
+Some times you only have an expression for the transfer-function, and you don't have it reduced to a fraction with polynomials of ```s``` as numerator and denomenator. No problem! The following method for defining transfer-functions finds the polynomial factors and defines the transfer-function for you:
+### Example:
+```julia
+julia> s = tf("s")
+
+TransferFunction{Continuous,ControlSystems.SisoRational{Int64}}
+s
+-
+1
+
+Continuous-time transfer function model
+```
+
+We can now use ```s```to define the above transfer-function like this:
+```julia
+julia> 1/(s^2+2s+1)
+
+TransferFunction{Continuous,ControlSystems.SisoRational{Int64}}
+      1
+-------------
+s^2 + 2*s + 1
+
+Continuous-time transfer function model
+```
+
+This was of course a trivial example, as the expression was already reduced. But as long as the expression only contains numbers and s (with s defined as shown), the transfer-function is defined correctly.
+Note that due to rounding-errors when dealing with floating point numbers, the transfer-function returned will sometimes show something like 1.99999999999 instead of 2.
+
 ## zpk - Pole-Zero-Gain Representation
 Sometimes it's better to represent the transfer function by its poles, zeros and gain, this can be done using
 ```julia
@@ -34,10 +62,15 @@ zpk(zeros, poles, gain, Ts=0)
 ```
 where `zeros` and `poles` are `Vectors` of the zeros and poles for the system and `gain` is a gain coefficient.
 ### Example
+<<<<<<< HEAD
 ```jldoctest
 zpk([-1.0,1], [-5, -10], 2)
 
 # output
+=======
+```julia
+julia> zpk([-1.0,1], [-5, -10], 2)
+>>>>>>> ef64701 (Adding example for s=tf("s") syntax)
 
 TransferFunction{Continuous,ControlSystems.SisoZpk{Float64,Float64}}
    (1.0*s + 1.0)(1.0*s - 1.0)
@@ -51,10 +84,15 @@ The transfer functions created using this method will be of type `TransferFuncti
 
 ## Converting between types
 It is sometime useful to convert one representation to another, this is possible using the same functions, for example
+<<<<<<< HEAD
 ```jldoctest
 tf(zpk([-1], [1], 2, 0.1))
 
 # output
+=======
+```julia
+julia>  tf(zpk([-1], [1], 2, 0.1))
+>>>>>>> ef64701 (Adding example for s=tf("s") syntax)
 
 TransferFunction{Discrete{Float64},ControlSystems.SisoRational{Int64}}
 2*z + 2
