@@ -4,10 +4,9 @@
 # here. This shouldn't be an issue, but it might be.
 """`y, t, x = step(sys[, Tf])` or `y, t, x = step(sys[, t])`
 
-Calculate the step response of system `sys`. If the final time `Tf` or time
+Calculate the response of the system `sys` to a unit step at time `t = 0`. If the final time `Tf` or time
 vector `t` is not provided, one is calculated based on the system pole
 locations.
-The step on the input goes from 0 to 1 and occurs at t=0.
 
 `y` has size `(length(t), ny, nu)`, `x` has size `(length(t), nx, nu)`"""
 function Base.step(sys::AbstractStateSpace, t::AbstractVector; method=:cont)
