@@ -27,7 +27,7 @@ The transfer functions created using this method will be of type `TransferFuncti
 
 
 
-Some times you only have an expression for the transfer-function, and you don't have it reduced to a fraction with polynomials of ```s``` as numerator and denomenator. No problem! The following method for defining transfer-functions finds the polynomial factors and defines the transfer-function for you:
+Some times you only have an expression for the transfer-function, and you don't have it reduced to a fraction with polynomials of `s` as numerator and denomenator. No problem! The following method for defining transfer-functions finds the polynomial factors and defines the transfer-function for you:
 ### Example:
 ```julia
 julia> s = tf("s")
