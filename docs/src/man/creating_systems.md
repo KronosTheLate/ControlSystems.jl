@@ -5,7 +5,7 @@ DocTestSetup = quote
 end
 ```
 
-## using the ```tf()``` function
+## using the `tf()` function
 The basic syntax for creating a transfer function is
 ```julia
 tf(num, den, Ts=0)
