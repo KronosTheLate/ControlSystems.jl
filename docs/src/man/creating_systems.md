@@ -43,12 +43,12 @@ Continuous-time transfer function model
 
 We can now use ```s```to define the above transfer-function like this:
 ```julia
-julia> 1/(s^2+2s+1)
+julia> (s-1)*(s^2 + s + 1)/(s^2 + 3s + 2)/(s+1)
 
 TransferFunction{Continuous,ControlSystems.SisoRational{Int64}}
-      1
--------------
-s^2 + 2*s + 1
+       s^3 - 1
+---------------------
+s^3 + 4*s^2 + 5*s + 2
 
 Continuous-time transfer function model
 ```
