@@ -164,13 +164,17 @@ end
     stepplot(sys[, tfinal[,  dt]])
 Plot step response of `sys` with optional final time `tfinal` and discretization time `dt`.
 If not defined, suitable values are chosen based on `sys`.
+The step on the input goes from 0 to 1 and occurs at t=0.
 """
 stepplot
 
 """
     impulseplot(sys[, tfinal[,  dt]])
-Plot step response of `sys` with optional final time `tfinal` and discretization time `dt`.
+Plot impulse response of `sys` with optional final time `tfinal` and discretization time `dt`.
 If not defined, suitable values are chosen based on `sys`.
+The the impulse is such that the area under it is 1, with the shortest possible time-step.
+For continuos systems this is the Dirac delta function.
+For discrete systems this is the Kronecker delta function.
 """
 impulseplot
 
