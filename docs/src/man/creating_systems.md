@@ -62,15 +62,8 @@ zpk(zeros, poles, gain, Ts=0)
 ```
 where `zeros` and `poles` are `Vectors` of the zeros and poles for the system and `gain` is a gain coefficient.
 ### Example
-<<<<<<< HEAD
-```jldoctest
-zpk([-1.0,1], [-5, -10], 2)
-
-# output
-=======
 ```julia
 julia> zpk([-1.0,1], [-5, -10], 2)
->>>>>>> ef64701 (Adding example for s=tf("s") syntax)
 
 TransferFunction{Continuous,ControlSystems.SisoZpk{Float64,Float64}}
    (1.0*s + 1.0)(1.0*s - 1.0)
@@ -91,8 +84,12 @@ tf(zpk([-1], [1], 2, 0.1))
 # output
 =======
 ```julia
+<<<<<<< HEAD
 julia>  tf(zpk([-1], [1], 2, 0.1))
 >>>>>>> ef64701 (Adding example for s=tf("s") syntax)
+=======
+julia> tf(zpk([-1], [1], 2, 0.1))
+>>>>>>> 3112475 (Update docs/src/man/creating_systems.md)
 
 TransferFunction{Discrete{Float64},ControlSystems.SisoRational{Int64}}
 2*z + 2
