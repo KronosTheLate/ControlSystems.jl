@@ -79,7 +79,7 @@ The transfer functions created using this method will be of type `TransferFuncti
 ## Converting between types
 It is sometime useful to convert one representation to another, this is possible using the same functions, for example
 ```julia
-julia>  tf(zpk([-1], [1], 2, 0.1))
+julia> tf(zpk([-1], [1], 2, 0.1))
 
 TransferFunction{ControlSystems.SisoRational{Int64}}
 2*z + 2
