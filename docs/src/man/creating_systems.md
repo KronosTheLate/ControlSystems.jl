@@ -5,7 +5,7 @@ DocTestSetup = quote
 end
 ```
 
-## using the `tf()` function
+## Using the `tf()` function
 The basic syntax for creating a transfer function is
 ```julia
 tf(num, den, Ts=0)
@@ -27,7 +27,7 @@ The transfer functions created using this method will be of type `TransferFuncti
 
 
 
-Some times you only have an expression for the transfer-function, and you don't have it reduced to a fraction with polynomials of `s` as numerator and denomenator. No problem! The following method for defining transfer-functions finds the polynomial factors and defines the transfer-function for you:
+For more general expressions, it is sometimes convenient to define `s = tf("s")` and then use the variable `s` in an expression:
 ### Example:
 ```julia
 julia> s = tf("s")
@@ -40,7 +40,7 @@ s
 Continuous-time transfer function model
 ```
 
-We can now use ```s```to define the above transfer-function like this:
+We can now use `s`to define a transfer-function:
 ```julia
 julia> (s-1)*(s^2 + s + 1)/(s^2 + 3s + 2)/(s+1)
 
@@ -51,7 +51,8 @@ s^3 + 4*s^2 + 5*s + 2
 
 Continuous-time transfer function model
 ```
-## zpk - Pole-Zero-Gain Representation
+
+## Using the `zpk()` function - Pole-Zero-Gain Representation
 Sometimes it's better to represent the transfer function by its poles, zeros and gain, this can be done using
 ```julia
 zpk(zeros, poles, gain, Ts=0)
