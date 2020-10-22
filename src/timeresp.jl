@@ -36,9 +36,9 @@ Base.step(sys::TransferFunction, t::AbstractVector; kwargs...) = step(ss(sys), t
 Calculate the impulse response of system `sys`. If the final time `Tf` or time
 vector `t` is not provided, one is calculated based on the system pole
 locations.
-The the impulse is such that the area under it is 1, with the shortest possible time-step.
-For continuos systems this is the Dirac delta function.
-For discrete systems this is the Kronecker delta function.
+The response to
+* A unit Dirac impulse at time `t=0` (continuous-time systems)
+* An impulse with magnitude `1/Ts` at time `k=0` (discrete-time systems)
 
 `y` has size `(length(t), ny, nu)`, `x` has size `(length(t), nx, nu)`"""
 function impulse(sys::AbstractStateSpace, t::AbstractVector; method=:cont)
